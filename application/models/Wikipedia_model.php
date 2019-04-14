@@ -2,8 +2,13 @@
 
 class Wikipedia_model extends CI_model{
 
-	function cek_login($table,$where){		
+	public function cek_login($table,$where){		
 		return $this->db->get_where($table,$where);
 	}
-	
+
+	public function insertAkun($data)
+	{
+		$this->db->insert('t_user', $data);
+		return $this->db->insert_id();
+	}
 }
