@@ -39,6 +39,17 @@ class Wikipedia extends CI_Controller {
 
 	public function login()
 	{
+		$data['username'] = $this->input->post('username');
+		$data['password'] = $this->input->post('password');
+
+		$cek = $this->Wikipedia_model->cek_login("t_user",$data)->num_rows();
+
+		if($cek > 0){
+			$this->session->set_userdata($data);
+		} else {
+			echo "Username dan password salah !";
+		}
+
 		$this->load->view('login');
 	}
 }
