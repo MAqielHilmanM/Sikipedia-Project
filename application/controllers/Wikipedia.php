@@ -18,22 +18,22 @@ class Wikipedia extends CI_Controller {
 	public function register()
 	{
 		if ($this->input->post()) {
-			
+
 			$data['name'] = $this->input->post('name');
 			$data['username'] = $this->input->post('username');
 			$data['password'] = $this->input->post('password');
 			$data['email'] = $this->input->post('email');
 
 			$id = $this->Wikipedia_model->registerAkun($data);
-			
-			if ($id){ 
+
+			if ($id){
 				echo "Registrasi Berhasil";
 				redirect('/');
 			}
 			else
 				echo "Registrasi Gagal";
 		}
-		
+
 		$this->load->view('register');
 	}
 
@@ -51,5 +51,12 @@ class Wikipedia extends CI_Controller {
 		}
 
 		$this->load->view('login');
+	}
+
+	public function wiki($key=''){
+		// data Dummy
+		$data['title'] = "Lorem Ipsum";
+
+		$this->load->view('v_wiki');
 	}
 }
