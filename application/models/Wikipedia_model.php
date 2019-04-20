@@ -6,7 +6,7 @@ class Wikipedia_model extends CI_model{
 		return $this->db->get_where($table,$where);
 	}
 
-	public function insertAkun($data)
+	public function registerAkun($data)
 	{
 		$this->db->insert('t_user', $data);
 		return $this->db->insert_id();

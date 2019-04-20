@@ -17,21 +17,24 @@ class Wikipedia extends CI_Controller {
 
 	public function register()
 	{
-		if ($this->input->post()) {
-			
-			$data['name'] = $this->input->post('name');
+		$this->form_validation->set_rules('username','Username','required');
+		$this->form_validation->set_rules('password','Password','required');
+		$this->form_validation->set_rules('c_password','Confirm password','required|matches[password]');
+
+
+		if ($this->form_validation->run() === TRUE) {
 			$data['username'] = $this->input->post('username');
-			$data['password'] = $this->input->post('password');
+			$data['password'] = md5($this->input->post('password'));
 			$data['email'] = $this->input->post('email');
 
 			$id = $this->Wikipedia_model->registerAkun($data);
 			
 			if ($id){ 
-				echo "Registrasi Berhasil";
+				$this->session->set_flashdata('pesan','Registrasi Berhasil!');
 				redirect('/');
 			}
 			else
-				echo "Registrasi Gagal";
+				$this->session->set_flashdata('pesan','Registrasi Gagal!');
 		}
 		
 		$this->load->view('register');
@@ -39,15 +42,19 @@ class Wikipedia extends CI_Controller {
 
 	public function login()
 	{
-		$data['username'] = $this->input->post('username');
-		$data['password'] = $this->input->post('password');
+		$this->form_validation->set_rules('username','Username','required');
+		$this->form_validation->set_rules('password','Password','required');
+		
+		if ($this->form_validation->run() === TRUE){
+			$data['username'] = $this->input->post('username');
+			$data['password'] = md5($this->input->post('password'));
 
-		$cek = $this->Wikipedia_model->cek_login("t_user",$data)->num_rows();
+			$cek = $this->Wikipedia_model->cek_login("t_user",$data)->num_rows();
 
-		if($cek > 0){
-			$this->session->set_userdata($data);
-		} else {
-			echo "Username dan password salah !";
+			if($cek > 0){
+				$this->session->set_userdata($data);
+				redirect('/');
+			}
 		}
 
 		$this->load->view('login');
