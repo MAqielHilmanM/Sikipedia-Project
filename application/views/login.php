@@ -84,6 +84,10 @@
 						<a href="#" class="forgot">Forgot your password?</a><br>
 					</div>
 					<div>
+						<img class="people" src="<?php echo base_url('assets/img/people.png'); ?>">
+						<p class="coba">Don't have an account?</p>
+					</div>
+					<div>
 						<!-- isi -->
 						<button id="join" type="button" class="btn5 col-3" onclick="window.location.href = '<?php echo site_url('Wikipedia/register');?>'">Join Wikipedia</button>
 					</div>

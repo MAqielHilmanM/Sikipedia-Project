@@ -2,6 +2,17 @@
 	font-family: "Linux Libertine";
 	src: url("fonts/LinLibertine_RZ.woff") format('woff');
 }
+
+.people{
+	padding-left: 80px;	
+}
+.coba{
+	position: relative;
+	bottom: 25px;
+	padding-left: 33px;
+	font-weight: bold;
+	font-size: 15px;
+}
 .keep{
 	margin-left: 15px;
 }
@@ -9,7 +20,9 @@
 	margin-left: 33px;
 }
 #join{
+	position: relative;
 	margin-left: 33px;
+	bottom: 35px;
 }
 #login{
 	margin-left: 33px;
