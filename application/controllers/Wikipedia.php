@@ -58,5 +58,12 @@ class Wikipedia extends CI_Controller {
 		$data['title'] = "Lorem Ipsum";
 
 		$this->load->view('v_wiki');
+	}	
+	
+	public function wikiEdit($key=''){
+		// data Dummy
+		$data['title'] = "Lorem Ipsum";
+
+		$this->load->view('v_edit');
 	}
 }
