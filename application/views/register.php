@@ -11,7 +11,7 @@
 				<div class="logo">
 					<a href="/"><img src='<?php echo base_url() ?>assets/img/logo.png' alt="logo"></a>
 				</div>
-				<div class="navigation">
+				<div>
 					<ul>
 						<li><a href="#">Main page</a></li>
 						<li><a href="#">Contents</a></li>
@@ -61,42 +61,91 @@
 						<h1>Create account</h1>
 						<form method="POST">
 							<?php echo validation_errors(); ?>
-					<div class="form-group col-3">
-						<label>Username</label>
-						<input class="form-control" type="text" name="username" placeholder="Enter your username">
-					</div>
 
-					<div class="form-group col-3">
-						<label>Password</label>
-						<input class="form-control pwd" type="password" name="password" placeholder="Enter a password">
-					</div>
+						<div class="mw-content-text">
+							<div class="row">
+								<div class="col-5">
+									
+									<div class="form-group col-6">
+										<labela>Username    
+											<span class="mw-ui-flush-right">
+												<a href="#">
+													(help me choose)
+												</a>
+											</span>
+										</label>
+										<input class="form-control" type="text" name="username" placeholder="Enter your username">
+									</div>
 
-					<div class="form-group col-3">
-						<label>Confirm password</label>
-						<input class="form-control pwd" type="password" name="c_password" placeholder="Enter your password again">
-					</div>
+									<div class="form-group col-6">
+										<label>Password</label>
+										<input class="form-control pwd" type="password" name="password" placeholder="Enter a password">
+									</div>
 
-					<div class="form-group col-3">
-						<label>Email address</label>
-						<input class="form-control type="password" name="email" placeholder="Enter your email address">
+									<div class="form-group col-6">
+										<label>Confirm password</label>
+										<input class="form-control pwd" type="password" name="c_password" placeholder="Enter your password again">
+									</div>
+
+									<div class="form-group col-6">
+										<label>Email address</label>
+										<input class="form-control type="password" name="email" placeholder="Enter your email address">
+									</div>
+									<div class="col-7">
+										<p>CAPTCHA Security check</p>
+										<p>To protect the wiki against automated account creation, we kindly ask you to enter the words that appear below in the box (<a href="#">more info</a>):
+										</p>
+
+										<div class="mw-input">
+											<div class="fancycaptcha-captcha-container">
+												<div class="fancycaptcha-captcha-and-reload">
+													<div class="fancycaptcha-image-container">
+														<img class="fancycaptcha-image" src="/w/index.php?title=Special:Captcha/image&amp;wpCaptchaId=728155157">
+														<small class="confirmedit-captcha-reload fancycaptcha-reload">Refresh</small>
+													</div>
+												</div>
+												<input id="mw-input-captchaWord" name="captchaWord" class="mw-ui-input" size="12" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Enter the text you see on the image" tabindex="6">
+												<small class="mw-createacct-captcha-assisted">Can't see the image? 
+													<a href="#" title="Wikipedia:Request an account">Request an account
+													</a>
+												</small>
+											</div>
+										</div>
+									</div>
+							</div>
+							<div>
+								<h1>Wikipedia is made by people like you.</h1>
+								<div>
+									<div class="mw-number-text icon-edits">
+										<h3>889,074,250</h3>
+										<p>edits</p>
+									</div>
+									<div class="mw-number-text icon-pages">
+										<h3>5,845,922</h3>
+										<p>articles</p>
+									</div>
+									<div class="mw-number-text icon-contributors">
+										<h3>136,523</h3>
+										<p>recent contributors</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					<div class="pagefooter">
+						<button id="create" class="btn btn-primary col-3" type="submit">Create your account</button>					
 					</div>
-					<!-- isi -->
-					<button id="create" class="btn btn-primary col-3" type="submit">Create your account</button>					
-				</div>
-				
-				<div class="pagefooter">
+				</div>	
+			</div>
+
 					
-					<div class="footerlinks">
+					<div>
 						<a href="#">Privacy policy</a> <a href="#">About Wikipedia</a> <a href="#">Disclaimers</a> <a href="#">Contact Wikipedia</a> <a href="#">Developers</a>
 						<a href="#">Cookie statement</a>
 						<a href="#">Mobile view</a>
 					</div>
-				</div>
-			
-			
-			</div>		
-		</div>
+				
 		
 
     </body>
 </html>
+
