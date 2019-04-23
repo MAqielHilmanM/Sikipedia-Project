@@ -22,4 +22,9 @@ class Action extends CI_Controller {
       $q = $this->input->post('search');
       redirect('wiki/'.$q);
   }
+
+  public function doLogout(){
+    $this->session->unset_userdata('userName');
+    redirect('wikipedia/');
+  }
 }

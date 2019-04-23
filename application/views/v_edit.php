@@ -56,7 +56,10 @@
         </div>
         <div class="mainsection">
             <div class="headerLinks">
-                <span class="user">Not logged in</span> <a href="#">Talk</a> <a href="#">Contributions</a> <a href="<?php echo site_url('Wikipedia/register'); ?>">Create account</a> <a href="<?php echo site_url('Wikipedia/login'); ?>">Log in</a>
+                <span class="user"><?php if($user!=null) echo $user; else echo "Not logged in"; ?></span> <a href="#">Talk</a> <a href="#">Contributions</a>
+                <a class="<?php if($user!=null) echo "d-none"; else echo ""; ?>" href="<?php echo site_url('Wikipedia/register'); ?>">Create account</a>
+                <a class="<?php if($user!=null) echo "d-none"; else echo ""; ?>" href="<?php echo site_url('Wikipedia/login'); ?>">Log in</a>
+                <a class="<?php if($user!=null) echo ""; else echo "d-none"; ?>" href="<?php echo site_url('action/doLogout'); ?>">Log Out</a>
             </div>
             <div class="tabs clearfix">
                 <div class="tabsLeft">
@@ -83,7 +86,7 @@
             <div class="article">
                 <h1 class="firstHeading" lang="en" id="firstHeading"><?= $title ?></h1>
                 <div class="bodyContent" id="bodyContent" style="font-size: 0.875em; line-height: 1.6;">
-                    <div id="mw-anon-edit-warning" class="alert alert-warning" role="alert">
+                    <div id="mw-anon-edit-warning" class="alert alert-warning <?php if($user!=null) echo "d-none"; else echo ''; ?>" role="alert">
                         <span style="color:#d33; font-weight:bold;">You are not logged in.</span> Your
                         <a href="/wiki/IP_address" title="IP address">
                           IP address
@@ -91,13 +94,13 @@
                         will be publicly visible if you make any edits. If you
                         <span class="plainlinks">
                           <b>
-                            <a class="external text" href="//en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Impresa_Pizzarotti">
+                            <a class="external text" href="<?php echo site_url('Wikipedia/login'); ?>">
                               log in
                             </a>
                           </b>
                           or
                           <b>
-                            <a class="external text" href="//en.wikipedia.org/w/index.php?title=Special:UserLogin/signup&amp;campaign=anoneditwarning&amp;returnto=Impresa_Pizzarotti">
+                            <a class="external text" href="<?php echo site_url('Wikipedia/register'); ?>">
                               create an account
                             </a>
                           </b>

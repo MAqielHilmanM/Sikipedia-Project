@@ -54,7 +54,10 @@
     </div>
     <div class="mainsection">
       <div class="headerLinks">
-        <span class="user">Not logged in</span> <a href="#">Talk</a> <a href="#">Contributions</a> <a href="<?php echo site_url('Wikipedia/register'); ?>">Create account</a> <a href="<?php echo site_url('Wikipedia/login'); ?>">Log in</a>
+        <span class="user"><?php if($user!=null) echo $user; else echo "Not logged in"; ?></span> <a href="#">Talk</a> <a href="#">Contributions</a>
+        <a class="<?php if($user!=null) echo "d-none"; else echo ""; ?>" href="<?php echo site_url('Wikipedia/register'); ?>">Create account</a>
+        <a class="<?php if($user!=null) echo "d-none"; else echo ""; ?>" href="<?php echo site_url('Wikipedia/login'); ?>">Log in</a>
+        <a class="<?php if($user!=null) echo ""; else echo "d-none"; ?>" href="<?php echo site_url('action/doLogout'); ?>">Log Out</a>
       </div>
       <div class="tabs clearfix">
         <div class="tabsLeft">

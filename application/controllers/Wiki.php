@@ -22,6 +22,7 @@ class Wiki extends CI_Controller {
     // data Dummy
     $data['id'] = $key;
     $data['title'] = $this->parserTitle($key);
+    $data['user'] = $this->session->userdata('userName');
     if($key == 'Main_Page' or $key == '' or $key == null or $key == 'index'){
       $this->load->view('v_home',$data);
     }else if($type == 'edit'){
@@ -48,16 +49,6 @@ class Wiki extends CI_Controller {
         }
       }
     }
-  }
-
-  public function doEdit($id = null){
-    if(!isset($id)) redirect('Wikipedia');
-
-    $article = $this->article_model;
-    $article->update($id);
-    // redirect('wiki/'.$id);
-    redirect('wiki/'.$id);
-
   }
 
   private function parserTitle($title){

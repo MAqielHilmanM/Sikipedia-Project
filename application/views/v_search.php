@@ -109,7 +109,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="navbar-top">
                         <img class="imageuser" src="<?= base_url('assets/img/user.png') ?>" alt="">
-                        <a class="menu_log" href="#">Belum masuk log</a>
+                        <a class="menu_log" href="#"><?php if($user!=null) echo $user; else echo "Not logged in"; ?></a>
                     </li>
                     <li class="navbar-top">
                         <a class="menu_top_nav" href="#">Pembicaraan</a>
@@ -119,13 +119,17 @@
                         <a class="menu_top_nav" href="#">Kontribusi</a>
                     </li>
 
-                    <li class="navbar-top">
+                    <li  class="navbar-top <?php if($user!=null) echo 'd-none'; else echo ''; ?>" >
                         <a class="menu_top_nav" href="<?php echo site_url('Wikipedia/register'); ?>">Buat akun baru</a>
                     </li>
 
-                    <li class="navbar-top">
+                    <li class="navbar-top <?php if($user!=null) echo 'd-none'; else echo ''; ?>">
                         <a class="menu_login_log" href="<?php echo site_url('Wikipedia/login'); ?>">Masuk log</a>
                     </li>
+
+          										<li class="navbar-top <?php if($user!=null) echo ''; else echo 'd-none'; ?>">
+          											<a class="menu_login_log" href="<?php echo site_url('Wikipedia/login'); ?>">Keluar log</a>
+          										</li>
                 </ul>
             </nav>
             <!--/nav-expand-->

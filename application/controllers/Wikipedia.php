@@ -30,13 +30,20 @@ class Wikipedia extends CI_Controller {
 			$id = $this->Wikipedia_model->registerAkun($data);
 			if ($id){
 				$this->session->set_flashdata('pesan','Registrasi Berhasil!');
+					$this->session->set_userdata('userName' ,$data['username']);
 				redirect('/');
 			}
 			else
 				$this->session->set_flashdata('pesan','Registrasi Gagal!');
 		}
 
-		$this->load->view('v_register');
+		$user = $this->session->userdata('userName');
+		if($user){
+			$data['user'] = $user;
+		}else{
+			$data['user'] = null;
+		}
+		$this->load->view('v_register',$data);
 	}
 
 	public function login()
@@ -51,12 +58,18 @@ class Wikipedia extends CI_Controller {
 			$cek = $this->Wikipedia_model->cek_login("t_user",$data)->num_rows();
 
 			if($cek > 0){
-				$this->session->set_userdata($data);
+				$this->session->set_userdata('userName' ,$data['username']);
 				redirect('/');
 			}
 		}
 
-		$this->load->view('v_login');
+		$user = $this->session->userdata('userName');
+		if($user){
+			$data['user'] = $user;
+		}else{
+			$data['user'] = null;
+		}
+		$this->load->view('v_login',$data);
 	}
 
 }
