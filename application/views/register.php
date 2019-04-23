@@ -59,6 +59,9 @@
 				</div>
 					<div class="article">
 						<h1>Create account</h1>
+						<hr>
+						<hr>
+						<br>
 						<form method="POST">
 							<?php echo validation_errors(); ?>
 

@@ -292,13 +292,7 @@ textarea {
 .article h1 {
 	font-family: 'Linux Libertine','Georgia','Times',serif;
 }
-.article h2 {
-	font-size: 1.6em;
-	margin: 0.5em 0 0.5em 0;
-	font-family: 'Linux Libertine','Georgia','Times',serif;
-	line-height: 1.4em;
-	padding-bottom: 0em;
-}
+
 .article h3 {
 	font-weight: bold;
 	font-size: 1.2em;
@@ -524,8 +518,6 @@ span.user {
 }
 .contentsPanel ul {
 	padding: 0 0 5px 5px;
-}
-.contentsPanel ul li ul{
 }
 .contentsPanel ul li ul li {
 	padding: 0 0 0 25px;
@@ -2509,37 +2501,7 @@ a.mw-ui-button:focus {
  color:#72777d;
  opacity:1
 }
-.mw-ui-input:-ms-input-placeholder {
- color:#72777d;
- opacity:1
-}
-.mw-ui-input::-moz-placeholder {
- color:#72777d;
- opacity:1
-}
-.mw-ui-input:-moz-placeholder {
- color:#72777d;
- opacity:1
-}
-.mw-ui-input::placeholder {
- color:#72777d;
- opacity:1
-}
-.mw-ui-input:invalid {
- box-shadow:none
-}
-.mw-ui-input:hover {
- border-color:#72777d
-}
-.mw-ui-input:focus {
- border-color:#3366cc;
- box-shadow:inset 0 0 0 1px #3366cc;
- outline:0
-}
-.mw-ui-input:not(:disabled) {
- -webkit-transition:color 100ms,border-color 100ms,box-shadow 100ms;
- -moz-transition:color 100ms,border-color 100ms,box-shadow 100ms;
- transition:color 100ms,border-color 100ms,box-shadow 100ms
+
 
 
 
