@@ -12,7 +12,7 @@ class Wikipedia extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('main_page');
+		$this->load->view('v_landing');
 	}
 
 	public function register()
@@ -28,7 +28,7 @@ class Wikipedia extends CI_Controller {
 			$data['email'] = $this->input->post('email');
 
 			$id = $this->Wikipedia_model->registerAkun($data);
-			if ($id){ 
+			if ($id){
 				$this->session->set_flashdata('pesan','Registrasi Berhasil!');
 				redirect('/');
 			}
@@ -36,14 +36,14 @@ class Wikipedia extends CI_Controller {
 				$this->session->set_flashdata('pesan','Registrasi Gagal!');
 		}
 
-		$this->load->view('register');
+		$this->load->view('v_register');
 	}
 
 	public function login()
 	{
 		$this->form_validation->set_rules('username','Username','required');
 		$this->form_validation->set_rules('password','Password','required');
-		
+
 		if ($this->form_validation->run() === TRUE){
 			$data['username'] = $this->input->post('username');
 			$data['password'] = md5($this->input->post('password'));
@@ -56,20 +56,7 @@ class Wikipedia extends CI_Controller {
 			}
 		}
 
-		$this->load->view('login');
+		$this->load->view('v_login');
 	}
 
-	public function wiki($key=''){
-		// data Dummy
-		$data['title'] = "Lorem Ipsum";
-
-		$this->load->view('v_wiki');
-	}	
-	
-	public function wikiEdit($key=''){
-		// data Dummy
-		$data['title'] = "Lorem Ipsum";
-
-		$this->load->view('v_edit');
-	}
 }

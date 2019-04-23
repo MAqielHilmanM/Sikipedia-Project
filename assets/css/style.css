@@ -1,3 +1,7 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -27,7 +31,7 @@ a:-webkit-any-link {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
     color: #0645ad;
     background: none;
 }
@@ -165,6 +169,16 @@ strong, b {
     font-weight: bold;
 }
 
+textarea {
+
+    width: 100%;
+    padding: 0.1em;
+    display: block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
 
 #mw-head {
     position: absolute;
@@ -765,263 +779,87 @@ form#editform {
     margin: 0;
     padding: 0;
 }
+
 .wikiEditor-ui {
     position: relative;
     clear: both;
     width: 100%;
 }
-.wikiEditor-ui-controls {
-    float: left;
-    width: 100%;
-    background-color: #fff;
-}
-.wikiEditor-ui-tabs {
-    float: left;
-    height: 2.5em;
-    margin-right: -1px;
-    background-color: #fff;
-    border-left: 1px solid #c8ccd1;
-    border-top: 1px solid #c8ccd1;
-}
-.wikiEditor-ui-buttons {
-    float: right;
-    height: 2.5em;
-    margin-right: -1px;
-    background-color: #fff;
-    padding-left: 1em;
-    border-top: 1px solid #fff;
-}
-.wikiEditor-ui .wikiEditor-ui-clear {
-    clear: both;
-}
 .wikiEditor-ui .wikiEditor-ui-view {
+
     border: 1px solid #c8ccd1;
+
 }
 .wikiEditor-ui .wikiEditor-ui-left {
+
     float: left;
     width: 100%;
+
 }
 .wikiEditor-ui .wikiEditor-ui-top {
+
     position: relative;
     border-bottom: 1px solid #c8ccd1;
-}
 
+}
 .wikiEditor-ui-toolbar {
+
     position: relative;
     display: block;
-    z-index: 7;
     background-color: #e8f2f8;
     background-image: -webkit-linear-gradient(top,#fdfefe 0,#e8f2f8 32px);
     background-image: -moz-linear-gradient(top,#fdfefe 0,#e8f2f8 32px);
     background-image: linear-gradient(#fdfefe 0,#e8f2f8 32px);
+    z-index: 7;
 }
+.wikiEditor-ui-toolbar .tabs, .wikiEditor-ui-toolbar .section-main {
 
-.oo-ui-toolbar {
-    clear: both;
-}
-.ve-init-mw-editSwitch {
-    float: right;
-}
-.oo-ui-toolbar-bar {
-    line-height: 1;
     position: relative;
-}
-.oo-ui-toolbar-bar {
-    background-color: #fff;
-    color: #222;
-}
-.oo-ui-toolbar-position-top > .oo-ui-toolbar-bar {
-    border-bottom: 1px solid #c8ccd1;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
-}
-.ve-init-mw-editSwitch .oo-ui-toolbar-bar {
-    background: transparent;
-    box-shadow: none;
-    border: 0;
-}
-.oo-ui-toolbar-tools, .oo-ui-toolbar-actions {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-.oo-ui-toolbar-tools {
-    display: inline;
-}
-.oo-ui-toolbar-tools, .oo-ui-toolbar-popups {
-    white-space: nowrap;
-}
-.oo-ui-toolGroup {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border-right: 1px solid #eaecf0;
-}
-.oo-ui-popupToolGroup {
-    position: relative;
-    min-width: 3em;
-}
-.ve-init-mw-editSwitch .oo-ui-popupToolGroup {
-    height: 32px;
-    border: 0;
-    margin: 0;
-    border-radius: 0;
-}
-
-.oo-ui-popupToolGroup-handle {
-    display: block;
-    cursor: pointer;
-}
-.oo-ui-popupToolGroup-handle {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.oo-ui-popupToolGroup.oo-ui-iconElement .oo-ui-popupToolGroup-handle, .oo-ui-popupToolGroup.oo-ui-indicatorElement .oo-ui-popupToolGroup-handle {
-    padding-top: 3em;
-}
-.oo-ui-popupToolGroup.oo-ui-indicatorElement .oo-ui-popupToolGroup-handle {
-    padding-right: 1.14285714em;
-}
-.oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle {
-    -webkit-transition: background-color 100ms,box-shadow 100ms;
-    -moz-transition: background-color 100ms,box-shadow 100ms;
-    transition: background-color 100ms,box-shadow 100ms;
-}
-.oo-ui-popupToolGroup.oo-ui-iconElement.oo-ui-indicatorElement .oo-ui-popupToolGroup-handle {
-    padding-left: 3em;
-}
-.ve-init-mw-editSwitch .oo-ui-popupToolGroup.oo-ui-iconElement .oo-ui-popupToolGroup-handle {
-    padding-top: 32px;
-    height: 0;
-}
-.oo-ui-iconElement-icon {
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    min-width: 20px;
-    width: 1.42857143em;
-    min-height: 20px;
-    height: 100%;
-}
-.oo-ui-icon-edit, .mw-ui-icon-edit:before {
-    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-core&image=edit&format=rasterized&lang=en&skin=vector&version=0jb486r);
-    background-image: linear-gradient(transparent,transparent),url(data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%222… 0 0-1.41 0L12 3.23zM1 14.25V19h4.75l9.96-9.96-4.75-4.75z%22/%3E%3C/svg%3E);
-}
-.oo-ui-popupToolGroup-handle .oo-ui-iconElement-icon {
-    left: 0.78571429em;
-}
-.oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle .oo-ui-iconElement-icon, .oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle .oo-ui-indicatorElement-indicator {
-    opacity: 0.87;
-    -webkit-transition: opacity 100ms;
-    -moz-transition: opacity 100ms;
-    transition: opacity 100ms;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-}
-.oo-ui-indicatorElement-indicator {
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    min-width: 12px;
-    width: 0.85714286em;
-    min-height: 12px;
-    height: 100%;
-}
-.oo-ui-indicator-down {
-    background-image: url(/w/load.php?modules=oojs-ui.styles.indicators&image=down&format=rasterized&lang=en&skin=vector);
-    background-image: linear-gradient(transparent,transparent),url(data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221…2M10.085 2.943L6.05 6.803l-3.947-3.86L1.05 3.996l5 5 5-5z%22/%3E%3C/svg%3E);
-}
-.oo-ui-popupToolGroup-handle .oo-ui-indicatorElement-indicator {
-    background-position: center 52%;
-    right: 0.57142857em;
-}
-.oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle .oo-ui-iconElement-icon, .oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle .oo-ui-indicatorElement-indicator {
-    opacity: 0.87;
-    -webkit-transition: opacity 100ms;
-    -moz-transition: opacity 100ms;
-    transition: opacity 100ms;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-}
-.oo-ui-element-hidden {
-    display: none !important;
-}
-.oo-ui-popupWidget {
-    position: absolute;
-}
-.oo-ui-element-hidden {
-    display: none !important;
-}
-.ve-init-mw-switchPopupWidget {
-    white-space: normal;
-    z-index: 4;
-}
-.oo-ui-popupWidget-popup {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-.oo-ui-popupWidget-popup {
-    background-color: #fff;
-    border: 1px solid #a2a9b1;
-    border-radius: 2px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.25);
-}
-.oo-ui-popupWidget-head {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-.ve-init-mw-switchPopupWidget .oo-ui-popupWidget-head {
-    font-weight: bold;
-}
-.oo-ui-labelElement .oo-ui-labelElement-label, .oo-ui-labelElement.oo-ui-labelElement-label {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.oo-ui-labelElement .oo-ui-labelElement-label {
-    line-height: 1.42857143em;
-}
-.oo-ui-popupWidget-head > .oo-ui-labelElement-label {
     float: left;
-    cursor: default;
+    min-height: 26px;
+    height: 100%;
+
 }
-.oo-ui-popupWidget-head > .oo-ui-labelElement-label {
-    margin: 0.64285714em 2.64285714em 0.42857143em 0.85714286em;
-    line-height: 1.28571429em;
+.wikiEditor-ui-toolbar .group {
+
+    float: left;
+    min-height: 26px;
+    padding-right: 6px;
+    border-right: 1px solid #c8ccd1;
+    margin: 3px;
+
 }
+
 .oo-ui-buttonElement {
+
     display: inline-block;
     line-height: normal;
     vertical-align: middle;
+
 }
 .oo-ui-buttonElement-frameless {
+
     position: relative;
+
 }
 .oo-ui-buttonWidget {
+
     margin-right: 0.5em;
+
 }
-.oo-ui-buttonWidget:last-child {
-    margin-right: 0;
+.oo-ui-buttonElement-frameless.oo-ui-iconElement:first-child {
+
+    margin-left: -0.42857143em;
+
 }
-.oo-ui-popupWidget-head > .oo-ui-buttonWidget {
-    position: absolute;
+.tool.oo-ui-buttonElement-frameless.oo-ui-iconElement {
+
+    margin: 0;
+
 }
-.oo-ui-popupWidget-head > .oo-ui-buttonWidget {
-    right: 0;
-}
+
 .oo-ui-buttonElement > .oo-ui-buttonElement-button {
+
     cursor: pointer;
     display: inline-block;
     -webkit-box-sizing: border-box;
@@ -1036,20 +874,27 @@ form#editform {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
 }
+
 .oo-ui-buttonElement > .oo-ui-buttonElement-button {
+
     position: relative;
     border-radius: 2px;
     padding-top: 2.14285714em;
     font-weight: bold;
     text-decoration: none;
+
 }
 .oo-ui-buttonElement.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+
     -webkit-transition: background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;
     -moz-transition: background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;
     transition: background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;
+
 }
 .oo-ui-buttonElement-frameless.oo-ui-iconElement > .oo-ui-buttonElement-button {
+
     min-width: 1.42857143em;
     min-height: 1.42857143em;
     border-color: #fff;
@@ -1058,9 +903,788 @@ form#editform {
     border-width: 1px;
     padding-top: 2.14285714em;
     padding-left: 2.14285714em;
+
 }
 .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+
     color: #222;
+
+}
+.tool.oo-ui-buttonElement-frameless.oo-ui-iconElement > .oo-ui-buttonElement-button {
+
+    padding: 3px;
+    border: 0;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+
+}
+.oo-ui-iconElement-icon {
+
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    min-width: 20px;
+    width: 1.42857143em;
+    min-height: 20px;
+    height: 100%;
+
+}
+.oo-ui-icon-bold, .mw-ui-icon-bold::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-styling&image=bold&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Ebold%3C/title%3E%3Cpath d=%22M9.93 3a9.34 9.34 0 0 1 2.39.27 4.53 4.53 0 0 1 1.62.73 2.87 2.87 0 0 1 .91 1.18 4 4 0 0 1 .29 1.55 3.09 3.09 0 0 1-.14.93 2.77 2.77 0 0 1-.43.83 3.21 3.21 0 0 1-.75.71 4.56 4.56 0 0 1-1.09.54 4 4 0 0 1 2.1 1.1 2.86 2.86 0 0 1 .68 2 4 4 0 0 1-.34 1.65 3.73 3.73 0 0 1-1 1.32 4.66 4.66 0 0 1-1.6.87 7 7 0 0 1-2.19.31H5V3zM7.87 5.2V9h1.89a5.1 5.1 0 0 0 1.07-.1 2.13 2.13 0 0 0 .78-.32A1.44 1.44 0 0 0 12.1 8a2.07 2.07 0 0 0 .17-.87 2.51 2.51 0 0 0-.14-.89 1.31 1.31 0 0 0-.43-.59 1.86 1.86 0 0 0-.7-.35 4.72 4.72 0 0 0-1-.1zm2.46 9.58a3.24 3.24 0 0 0 1.13-.17 1.91 1.91 0 0 0 .71-.45 1.54 1.54 0 0 0 .37-.64 2.66 2.66 0 0 0 .11-.75 2.2 2.2 0 0 0-.12-.76 1.36 1.36 0 0 0-.4-.57 1.89 1.89 0 0 0-.72-.36 4.09 4.09 0 0 0-1.1-.13H7.87v3.83z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-buttonElement.oo-ui-iconElement .oo-ui-iconElement-icon, .oo-ui-buttonElement.oo-ui-indicatorElement .oo-ui-indicatorElement-indicator {
+
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+
+}
+.oo-ui-buttonElement.oo-ui-widget-enabled > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon, .oo-ui-buttonElement.oo-ui-widget-enabled > .oo-ui-buttonElement-button > .oo-ui-indicatorElement-indicator {
+
+    opacity: 0.87;
+    -webkit-transition: opacity 100ms;
+    -moz-transition: opacity 100ms;
+    transition: opacity 100ms;
+
+}
+.oo-ui-buttonElement-frameless.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
+
+    left: 0.35714286em;
+
+}
+.tool.oo-ui-buttonElement-frameless.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
+
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    left: 3px;
+    top: 3px;
+    opacity: 0.7;
+
+}
+.oo-ui-icon-italic, .mw-ui-icon-italic::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-styling&image=italic&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Eitalic%3C/title%3E%3Cpath d=%22M14 3v1l-1.32.08-.33.29-2.11 11.23.25.29L12 16v1H6v-1l1.32-.1.31-.31L9.74 4.38l-.21-.29L8 4V3z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-link, .mw-ui-icon-link::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-core&image=link&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Elink%3C/title%3E%3Cpath d=%22M4.83 15h2.91a4.88 4.88 0 0 1-1.55-2H5a3 3 0 1 1 0-6h3a3 3 0 0 1 2.82 4h2.1a4.82 4.82 0 0 0 .08-.83v-.34A4.83 4.83 0 0 0 8.17 5H4.83A4.83 4.83 0 0 0 0 9.83v.34A4.83 4.83 0 0 0 4.83 15z%22/%3E%3Cpath d=%22M15.17 5h-2.91a4.88 4.88 0 0 1 1.55 2H15a3 3 0 1 1 0 6h-3a3 3 0 0 1-2.82-4h-2.1a4.82 4.82 0 0 0-.08.83v.34A4.83 4.83 0 0 0 11.83 15h3.34A4.83 4.83 0 0 0 20 10.17v-.34A4.83 4.83 0 0 0 15.17 5z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-image, .mw-ui-icon-image::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-media&image=image&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Eimage%3C/title%3E%3Cpath d=%22M2 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-.17 13l4.09-5.25 2.92 3.51L12.92 8l5.25 7z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-reference, .mw-ui-icon-reference::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-citation&image=reference&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Ereference%3C/title%3E%3Cpath d=%22M15 10l-2.78-2.78L9.44 10V1H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-puzzle, .mw-ui-icon-puzzle::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-advanced&image=puzzle&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Epuzzle%3C/title%3E%3Ccircle cx=%2217%22 cy=%2210%22 r=%223%22/%3E%3Cpath d=%22M10.58 3A3 3 0 0 1 11 4.5a3 3 0 0 1-6 0A3 3 0 0 1 5.42 3H1v12a2 2 0 0 0 2 2h12V3z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-highlight, .mw-ui-icon-highlight::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-styling&image=highlight&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Ehighlight%3C/title%3E%3Cpath d=%22M15.14 2.27a1 1 0 0 0-1.41 0l-10 10a1 1 0 0 0 0 1.41L4 14l-3 4h5l1-1 .29.29a1 1 0 0 0 1.41 0l10-10a1 1 0 0 0 .03-1.43zM7 15l-2-2 9-9 2 2z%22/%3E%3C/svg%3E");
+
+}
+.wikiEditor-ui-toolbar .tabs {
+
+    float: left;
+    height: 100%;
+    list-style: none;
+    margin: 3px;
+    min-height: 26px;
+    position: relative;
+
+}
+.wikiEditor-ui-toolbar .tabs, .wikiEditor-ui-toolbar .section-main {
+
+    position: relative;
+    float: left;
+    min-height: 26px;
+    height: 100%;
+
+}
+.wikiEditor-ui-toolbar .tabs span.tab {
+
+    display: block;
+    float: left;
+    line-height: 26px;
+
+}
+.wikiEditor-ui-toolbar .tabs span.tab a, .wikiEditor-ui-toolbar .tabs span.tab a:visited {
+
+    background-image: url(/w/extensions/WikiEditor/modules/images/toolbar/arrow-ltr.png?93349);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22%3E%3Cpath d=%22M6 3l5 5-5 5z%22 fill=%22%23797979%22/%3E%3C/svg%3E");
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: #0645ad;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 26px;
+    padding-left: 18px;
+    padding-right: 12px;
+
+}
+.wikiEditor-ui-toolbar .tabs span.tab a.current, .wikiEditor-ui-toolbar .tabs span.tab a.current:visited {
+
+    background-image: url(/w/extensions/WikiEditor/modules/images/toolbar/arrow-down.png?e9345);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22%3E%3Cpath d=%22M13 6l-5 5-5-5z%22 fill=%22%23797979%22/%3E%3C/svg%3E");
+    color: #222;
+
+}
+wikiEditor-ui-toolbar .tabs span.tab a.current:hover, .wikiEditor-ui-toolbar .tabs span.tab a.current:visited:hover {
+
+    text-decoration: none;
+
+}
+.wikiEditor-ui-toolbar .sections {
+
+    float: left;
+    width: 100%;
+    clear: both;
+
+}
+.wikiEditor-ui-toolbar .sections .section {
+
+    float: left;
+    width: 100%;
+    border-top: 1px solid #c8ccd1;
+    background-color: #eaf3ff;
+
+}
+.wikiEditor-ui-toolbar .sections .section-hidden {
+
+    display: none;
+
+}
+.wikiEditor-ui-toolbar .group {
+
+    float: left;
+    min-height: 26px;
+    padding-right: 6px;
+    border-right: 1px solid #c8ccd1;
+    margin: 3px;
+
+}
+.wikiEditor-ui-toolbar .group .tool-select {
+
+    float: left;
+    margin: 2px;
+        margin-right: 2px;
+    height: 22px;
+    cursor: pointer;
+    border: 1px solid #c8ccd1;
+    padding: 0;
+    margin-right: 0;
+    background-color: #fff;
+
+}
+.wikiEdi
+tor-ui-toolbar .group .label {
+
+    float: left;
+    border: 0;
+    height: 22px;
+    line-height: 22px;
+    margin: 2px;
+    margin-left: 5px;
+    margin-right: 8px;
+    color: #666;
+    cursor: default;
+
+}
+.wikiEditor-ui-toolbar .group .tool-select .label {
+
+    background-image: url(/w/extensions/WikiEditor/modules/images/toolbar/arrow-down.png?e9345);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22%3E%3Cpath d=%22M13 6l-5 5-5-5z%22 fill=%22%23797979%22/%3E%3C/svg%3E");
+    background-position: center right;
+    background-repeat: no-repeat;
+    padding: 0;
+        padding-right: 0px;
+        padding-left: 0px;
+    margin: 0;
+        margin-right: 0px;
+    padding-left: 4px;
+    padding-right: 22px;
+    margin-right: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #222;
+
+}
+.wikiEditor-ui-toolbar .group .tool-select .menu .options {
+
+    position: absolute;
+    display: none;
+    margin-left: -1px;
+    margin-top: 22px;
+    border: 1px solid #c8ccd1;
+    background-color: #fff;
+
+}
+.wikiEditor-ui-toolbar .group .tool-select:hover .options, .wikiEditor-ui-toolbar .group .tool-select .menu .options-shown {
+
+    display: block;
+
+}
+.wikiEditor-ui-toolbar .group .tool-select .options .option {
+
+    display: block;
+    padding: 0.5em;
+    text-decoration: none;
+    color: #000;
+    white-space: nowrap;
+
+}
+.wikiEditor-ui-toolbar .group .tool-select .options .option[rel="heading-2"] {
+
+    font-size: 150%;
+    font-weight: normal;
+
+}
+.wikiEditor-ui-toolbar .group .tool-select .options .option[rel="heading-3"] {
+
+    font-size: 132%;
+    font-weight: normal;
+
+}
+.wikiEditor-ui-toolbar .group .tool-select .options .option[rel="heading-4"] {
+
+    font-size: 116%;
+    font-weight: normal;
+
+}
+.wikiEditor-ui-toolbar .group .tool-select .options .option[rel="heading-5"] {
+
+    font-size: 100%;
+    font-weight: bold;
+
+}
+.oo-ui-icon-listBullet, .mw-ui-icon-listBullet::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-list&image=listBullet&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Ebullet list%3C/title%3E%3Cpath d=%22M7 15h12v2H7zm0-6h12v2H7zm0-6h12v2H7z%22/%3E%3Ccircle cx=%223%22 cy=%224%22 r=%222%22/%3E%3Ccircle cx=%223%22 cy=%2210%22 r=%222%22/%3E%3Ccircle cx=%223%22 cy=%2216%22 r=%222%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-listNumbered, .mw-ui-icon-listNumbered::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-list&image=listNumbered&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Enumbered list%3C/title%3E%3Cpath d=%22M7 15h12v2H7zm0-6h12v2H7zm0-6h12v2H7zM2 6h1V1H1v1h1zm1 9v1H2v1h1v1H1v1h3v-5H1v1zM1 8v1h2v1H1.5a.5.5 0 0 0-.5.5V13h3v-1H2v-1h1.5a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-noWikiText, .mw-ui-icon-noWikiText::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-advanced&image=noWikiText&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Eno WikiText%3C/title%3E%3Cpath d=%22M16 3v2h1v10l2 2V3zM9 5V3H5l2 2zM1 1L0 2l1 1v14h3v-2H3V5l2 2v10h4v-2H7V9l6 6h-2v2h4l3 3 1-1zm12 10l2 2V3h-4v2h2z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-newline, .mw-ui-icon-newline::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-advanced&image=newline&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Enewline%3C/title%3E%3Cpath d=%22M17 4v6H7V6l-6 5 6 5v-4h12V4z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-bigger, .mw-ui-icon-bigger::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-styling&image=bigger&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Ebigger%3C/title%3E%3Cpath d=%22M14 18h-1.57a.66.66 0 0 1-.44-.13.87.87 0 0 1-.25-.34l-1-2.77H5.3l-1 2.77a.83.83 0 0 1-.24.32.65.65 0 0 1-.44.15H2L7 5.47h2zm-3.85-4.7L8.42 8.72A12.66 12.66 0 0 1 8 7.37q-.1.41-.21.75t-.21.6L5.85 13.3zM15 2l3 4h-6z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-smaller, .mw-ui-icon-smaller::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-styling&image=smaller&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Esmaller%3C/title%3E%3Cpath d=%22M12 16h-1.05a.44.44 0 0 1-.29-.09.58.58 0 0 1-.17-.22l-.7-1.84H6.2l-.7 1.84a.56.56 0 0 1-.16.21.43.43 0 0 1-.29.1H4l3.31-8.35h1.38zm-2.57-3.13L8.28 9.82a8.5 8.5 0 0 1-.28-.9q-.06.27-.14.5l-.14.4-1.15 3zM15 6l3-4h-6z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-superscript, .mw-ui-icon-superscript::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-styling&image=superscript&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Esuperscript%3C/title%3E%3Cpath d=%22M18 1V0h-.5a1.49 1.49 0 0 0-1 .39 1.49 1.49 0 0 0-1-.39H15v1h.5a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5H15v1h.5a1.49 1.49 0 0 0 1-.39 1.49 1.49 0 0 0 1 .39h.5V8h-.5a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .5-.5zm-4.32 15h-2.42a.67.67 0 0 1-.46-.15 1.33 1.33 0 0 1-.28-.34l-2.77-4.44a2.65 2.65 0 0 1-.28.69L5 15.51a2.22 2.22 0 0 1-.29.34.58.58 0 0 1-.42.15H2l4.15-6.19L2.17 4h2.42a.81.81 0 0 1 .41.09.8.8 0 0 1 .24.26L8 8.59a2.71 2.71 0 0 1 .33-.74L10.6 4.4a.69.69 0 0 1 .6-.4h2.32l-4 5.71z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-subscript, .mw-ui-icon-subscript::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-styling&image=subscript&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Esubscript%3C/title%3E%3Cpath d=%22M13.68 16h-2.42a.67.67 0 0 1-.46-.15 1.33 1.33 0 0 1-.28-.34l-2.77-4.44a2.65 2.65 0 0 1-.28.69L5 15.51a2.22 2.22 0 0 1-.29.34.58.58 0 0 1-.42.15H2l4.15-6.19L2.17 4h2.42a.81.81 0 0 1 .41.09.8.8 0 0 1 .24.26L8 8.59a2.71 2.71 0 0 1 .33-.74L10.6 4.4a.69.69 0 0 1 .6-.4h2.32l-4 5.71zm3.82-4h.5v-1h-.5a1.49 1.49 0 0 0-1 .39 1.49 1.49 0 0 0-1-.39H15v1h.5a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5H15v1h.5a1.49 1.49 0 0 0 1-.39 1.49 1.49 0 0 0 1 .39h.5v-1h-.5a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .5-.5z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-imageGallery, .mw-ui-icon-imageGallery::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-media&image=imageGallery&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Eimage gallery%3C/title%3E%3Cpath d=%22M3 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 11l3.5-4.5 2.5 3 3.5-4.5 4.5 6zM16 2a2 2 0 0 1 2 2H2a2 2 0 0 1 2-2z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-articleRedirect, .mw-ui-icon-articleRedirect::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-content&image=articleRedirect&format=rasterized&lang=en&skin=vector);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Earticle redirect%3C/title%3E%3Cpath d=%22M5 1a2 2 0 0 0-2 2v1c0 5 2 8 7 8V9l5 4-5 4v-3c-3.18 0-5.51-.85-7-2.68V17a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z%22/%3E%3C/svg%3E");
+
+}
+.oo-ui-icon-table, .mw-ui-icon-table::before {
+
+    background-image: url(/w/load.php?modules=oojs-ui.styles.icons-editing-advanced&image=table&format=rasterized&lang=en&skin=vector&version=1bp1bv0);
+    background-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Etable%3C/title%3E%3Cpath d=%22M2 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm0 4h7v4H2zm0 10v-4h7v4zm16 0h-7v-4h7zm0-6h-7V6h7z%22/%3E%3C/svg%3E");
+
+}
+
+.wikiEditor-ui-toolbar .sections .section {
+    float: left;
+    width: 100%;
+    border-top: 1px solid #c8ccd1;
+    background-color: #eaf3ff;
+}
+
+.wikiEditor-ui-toolbar .booklet .index {
+
+    float: left;
+    width: 20%;
+    height: 125px;
+    overflow: auto;
+    resize: horizontal;
+
+}
+.wikiEditor-ui-toolbar .booklet .index div {
+
+    padding: 4px;
+        padding-left: 4px;
+    padding-left: 6px;
+    cursor: pointer;
+    color: #0645ad;
+
+}
+.wikiEditor-ui-toolbar .booklet .index .current {
+
+    background-color: #eaecf0;
+    color: #222;
+    cursor: default;
+
+}
+.wikiEditor-ui-toolbar .booklet .pages {
+
+    background-color: #f8f9fa;
+    height: 125px;
+    overflow: auto;
+
+}
+
+.wikiEditor-ui-toolbar .sections .section {
+
+    float: left;
+    width: 100%;
+    border-top: 1px solid #c8ccd1;
+    background-color: #eaf3ff;
+
+}
+
+.wikiEditor-ui-toolbar .page-table {
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+.wikiEditor-ui-toolbar .page-table table {
+
+    background: none;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+.wikiEditor-ui-toolbar .page-table table {
+
+    border-collapse: collapse;
+
+}
+.wikiEditor-ui-toolbar .page-table th {
+
+    color: #54595d;
+
+}
+.wikiEditor-ui-toolbar .page-table th, .wikiEditor-ui-toolbar .page-table td {
+
+    margin: 0;
+    padding: 5px;
+    text-align: left;
+
+}
+.mw-editfont-monospace {
+
+    font-family: monospace,monospace;
+
+}
+.wikiEditor-ui textarea {
+
+    width: 100%;
+    border: 0;
+
+}
+#wpTextbox1 {
+
+    line-height: 1.5em;
+    resize: vertical;
+
+}
+.mw-editform #wpTextbox1 {
+
+    margin: 0;
+    display: block;
+    max-height: 100vh;
+    min-height: 5em;
+
+}
+div#editpage-specialchars {
+
+    display: block;
+    border: 1px solid #c0c0c0;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgb(192, 192, 192);
+    padding: .5em 1em;
+
+}
+textarea#wpTextbox1 + #editpage-specialchars, .wikiEditor-ui-clear + #editpage-specialchars {
+
+    border-top: none;
+
+}
+.mw-body-content p {
+
+    line-height: inherit;
+    margin: 0.5em 0;
+
+}
+#editpage-specialchars a {
+
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 1px 4px;
+
+}
+.editOptions {
+
+    background-color: #eaecf0;
+    color: #222;
+    border: 1px solid #c8ccd1;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgb(200, 204, 209);
+    border-top: 0;
+    padding: 1em 1em 1.5em 1em;
+    margin-bottom: 2em;
+
+}
+.mw-editform .editOptions {
+
+    border-radius: 0 0 2px 2px;
+
+}
+.oo-ui-fieldLayout {
+
+    display: block;
+    margin-top: 1.14285714em;
+
+}
+.oo-ui-fieldLayout.oo-ui-labelElement, .oo-ui-fieldLayout.oo-ui-fieldLayout-align-inline {
+
+    margin-top: 0.85714286em;
+
+}
+.oo-ui-fieldLayout:first-child, .oo-ui-fieldLayout.oo-ui-labelElement:first-child, .oo-ui-fieldLayout.oo-ui-fieldLayout-align-inline:first-child {
+
+    margin-top: 0;
+
+}
+.mw-editform #wpSummaryLabel {
+
+    margin: 0;
+
+}
+.oo-ui-fieldLayout.oo-ui-fieldLayout-align-top > .oo-ui-fieldLayout-body > .oo-ui-fieldLayout-header, .oo-ui-fieldLayout.oo-ui-fieldLayout-align-top > .oo-ui-fieldLayout-body > .oo-ui-fieldLayout-field {
+
+    display: block;
+
+}
+.oo-ui-fieldLayout.oo-ui-labelElement > .oo-ui-fieldLayout-body > .oo-ui-fieldLayout-header {
+
+    padding-bottom: 0.28571429em;
+
+}
+.oo-ui-fieldLayout.oo-ui-labelElement.oo-ui-fieldLayout-align-top > .oo-ui-fieldLayout-body > .oo-ui-fieldLayout-header, .oo-ui-fieldLayout.oo-ui-labelElement.oo-ui-fieldLayout-align-inline > .oo-ui-fieldLayout-body {
+
+    max-width: 50em;
+
+}
+.mw-editform #wpSummaryWidget, .mw-editform #wpSummaryLabel .oo-ui-fieldLayout-header {
+
+    max-width: none;
+
+}
+.oo-ui-labelElement .oo-ui-labelElement-label, .oo-ui-labelElement.oo-ui-labelElement-label {
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+.oo-ui-labelElement .oo-ui-labelElement-label {
+
+    line-height: 1.42857143em;
+
+}
+.oo-ui-fieldLayout.oo-ui-fieldLayout-align-top > .oo-ui-fieldLayout-body > .oo-ui-fieldLayout-header, .oo-ui-fieldLayout.oo-ui-fieldLayout-align-top > .oo-ui-fieldLayout-body > .oo-ui-fieldLayout-field {
+
+    display: block;
+
+}
+.oo-ui-textInputWidget {
+
+    position: relative;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 50em;
+
+}
+.oo-ui-inputWidget:last-child {
+
+    margin-right: 0;
+
+}
+.mw-editform #wpSummaryWidget {
+
+    display: block;
+    margin-bottom: 1em;
+
+}
+.mw-editform #wpSummaryWidget, .mw-editform #wpSummaryLabel .oo-ui-fieldLayout-header {
+
+    max-width: none;
+
+}
+.oo-ui-textInputWidget input {
+
+    -moz-appearance: textfield;
+
+}
+.oo-ui-textInputWidget input {
+
+    height: 2.28571429em;
+
+}
+.oo-ui-textInputWidget .oo-ui-inputWidget-input {
+
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+.oo-ui-textInputWidget .oo-ui-inputWidget-input {
+
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    border: 1px solid #a2a9b1;
+    border-radius: 2px;
+    padding: 0.42857143em 0.57142857em;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: 1.28571429em;
+
+}
+.oo-ui-textInputWidget.oo-ui-widget-enabled .oo-ui-inputWidget-input {
+
+    box-shadow: inset 0 0 0 1px transparent;
+    -webkit-transition: border-color 250ms,box-shadow 250ms;
+    -moz-transition: border-color 250ms,box-shadow 250ms;
+    transition: border-color 250ms,box-shadow 250ms;
+
+}
+.mw-editform #editpage-copywarn {
+
+    font-size: 0.9em;
+    line-height: 1.26;
+
+}
+.mw-body-content p {
+
+    line-height: inherit;
+    margin: 0.5em 0;
+
+}
+.oo-ui-buttonElement {
+
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+
+}
+.oo-ui-inputWidget {
+
+    margin-right: 0.5em;
+
+}
+.mw-editform .editButtons .oo-ui-buttonElement, .mw-editform .editHelp {
+
+    margin-top: 0.5em;
+
+}
+
+#wpSaveWidget{
+  color: #fff;
+  margin-right: 0.5em;
+  margin-left: 14px;
+  background-color: #36c;
+  border-color: #36c;
+  padding-left: 0.85714286em;
+  padding-right: 0.85714286em;
+  line-height: 1.28571429em;
+}
+
+#wpPreviewWidget,#wpDiffWidget{
+  margin-right: 0.5em;
+  background-color: #f8f9fa;
+  color: #222;
+  border-color: #a2a9b1;
+  padding-left: 0.85714286em;
+  padding-right: 0.85714286em;
+  line-height: 1.28571429em;
+}
+.oo-ui-buttonElement > .oo-ui-buttonElement-button {
+
+    cursor: pointer;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: middle;
+    font-family: inherit;
+    font-size: inherit;
+    white-space: nowrap;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+.oo-ui-buttonElement > .oo-ui-buttonElement-button {
+
+    position: relative;
+    border-radius: 2px;
+    padding-top: 2.14285714em;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+.oo-ui-buttonElement.oo-ui-labelElement > .oo-ui-buttonElement-button {
+
+    line-height: 1;
+
+}
+.oo-ui-buttonElement.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+
+    -webkit-transition: background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;
+    -moz-transition: background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;
+    transition: background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;
+
+}
+.oo-ui-buttonElement-frameless.oo-ui-labelElement > .oo-ui-buttonElement-button {
+
+    border-color: #fff;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px;
+    padding: 0.42857143em 0.14285714em;
+
+}
+.oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+
+    color: #222;
+
+}
+.oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button {
+
+    color: #d33;
+
+}
+.oo-ui-labelElement .oo-ui-labelElement-label, .oo-ui-labelElement.oo-ui-labelElement-label {
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+.oo-ui-labelElement .oo-ui-labelElement-label {
+
+    line-height: 1.42857143em;
+
+}
+.oo-ui-buttonElement.oo-ui-labelElement > input.oo-ui-buttonElement-button, .oo-ui-buttonElement.oo-ui-labelElement > .oo-ui-buttonElement-button > .oo-ui-labelElement-label {
+
+    line-height: 1.28571429em;
+
+}
+
+.oo-ui-buttonElement {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+}
+.oo-ui-buttonElement-frameless {
+    position: relative;
+}
+.oo-ui-buttonWidget {
+    margin-right: 0.5em;
+}
+.oo-ui-buttonWidget:last-child {
+    margin-right: 0;
+}
+.mw-editform .editButtons .oo-ui-buttonElement, .mw-editform .editHelp {
+    margin-top: 0.5em;
+}
+.oo-ui-buttonElement-frameless.oo-ui-labelElement:first-child {
+    margin-left: -0.14285714em;
+}
+
+.mw-body-content h3, .mw-body-content h4, .mw-body-content h5, .mw-body-content h6 {
+    line-height: 1.6;
+    margin-top: 0.3em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.mw-body-content h3 {
+    font-size: 1.2em;
+}
+
+.mw-body-content h3, .mw-body-content h4 {
+    font-weight: bold;
 }
 
 @media screen and (min-width: 982px){

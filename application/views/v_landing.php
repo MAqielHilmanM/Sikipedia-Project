@@ -21,7 +21,7 @@
 	</h1>
 	<!-- container div for the central logo and the links to the most viewed language editions -->
 	<div class="central-featured" data-el-section="primary links">
-		
+
 		<div class="central-featured-lang lang1" lang="en" dir="ltr">
 			<a id="js-link-box-en" href="#" class="link-box">
 				<strong>English</strong>
@@ -96,7 +96,7 @@
 
 	<!-- Search form -->
 	<div class="search-container">
-		<form class="pure-form" id="search-form" action="#">
+		<form class="pure-form" id="search-form" action="<?= base_url('index.php/action/doSearch')?>" method="post">
 			<fieldset>
 				<input type="hidden" name="family" value="wikipedia">
 				<input type="hidden" id="hiddenLanguageInput" name="language" value="en">

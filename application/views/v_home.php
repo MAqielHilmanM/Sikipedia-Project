@@ -9,8 +9,11 @@
 	<title>Halaman Utama</title>
 	<link rel="stylesheet" href="<?= base_url('assets/home_search/halaman.css') ?>">
 	<link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
-	<script src="<?= base_url('assets/css/jquery.min.js') ?>"></script>
-	<script src="<?= base_url('assets/css/bootstrap.min.js') ?>"></script>
+	<script src="<?= base_url('assets/js/jquery.min.js') ?>"></script>
+	<script src="<?= base_url('assets/js/popper.min.js') ?>"></script>
+	<script src="<?= base_url('assets/js/bootstrap.js') ?>"></script>
+	<script src="<?= base_url('assets/js/script.js') ?>"></script>
+
 </head>
 <!--/head-->
 
@@ -20,10 +23,10 @@
 		<!--row-->
 		<div class="col-md-2">
 			<!--col-md-2-->
-			<img class="imagewiki" src="images/wikipedia.png" alt="">
+			<img class="imagewiki" src="<?= base_url('assets/img/wikipedia.png') ?>" alt="">
 			<ul class="tbl_menu">
 				<li>
-					<a href="#" class="tbl_menu">Halaman utama</a>
+					<a href="<?php echo site_url('wiki/index'); ?>" class="tbl_menu">Halaman utama</a>
 				</li>
 				<li>
 					<a href="#" class="tbl_menu">Perubahan terbaru</a>
@@ -41,7 +44,7 @@
 
 			<ul class="tbl_menu">
 				<li class="jdl_menu">Komunitas</li>
-				<img class="imagerow" src="images/row.png" alt="">
+				<img class="imagerow" src="<?= base_url('assets/img/row.png') ?>" alt="">
 				<li>
 					<a href="#" class="tbl_menu">Warung kopi</a>
 				</li>
@@ -55,7 +58,7 @@
 
 			<ul class="tbl_menu">
 				<li class="jdl_menu">Wikipedia</li>
-				<img class="imagerow" src="images/row.png" alt="">
+				<img class="imagerow" src="<?= base_url('assets/img/row.png') ?>" alt="">
 				<li>
 					<a href="#" class="tbl_menu">Tentang Wikipedia</a>
 				</li>
@@ -81,7 +84,7 @@
 
 			<ul class="tbl_menu">
 				<li class="jdl_menu">Bagikan</li>
-				<img class="imagerow" src="images/row.png" alt="">
+				<img class="imagerow" src="<?= base_url('assets/img/row.png') ?>" alt="">
 				<li>
 					<a href="#" class="tbl_menu">Facebook</a>
 				</li>
@@ -95,7 +98,7 @@
 
 			<ul class="tbl_menu">
 				<li class="jdl_menu">Cetak/ekspor</li>
-				<img class="imagerow" src="images/row.png" alt="">
+				<img class="imagerow" src="<?= base_url('assets/img/row.png') ?>" alt="">
 				<li>
 					<a href="#" class="tbl_menu">Buat buku</a>
 				</li>
@@ -109,7 +112,7 @@
 
 			<ul class="tbl_menu">
 				<li class="jdl_menu">Dalam proyek lain</li>
-				<img class="imagerow" src="images/row.png" alt="">
+				<img class="imagerow" src="<?= base_url('assets/img/row.png') ?>" alt="">
 				<li>
 					<a href="#" class="tbl_menu">Wikimedia commons</a>
 				</li>
@@ -144,7 +147,7 @@
 
 			<ul class="tbl_menu">
 				<li class="jdl_menu">Perkakas</li>
-				<img class="imagerow" src="images/row.png" alt="">
+				<img class="imagerow" src="<?= base_url('assets/img/row.png') ?>" alt="">
 				<li>
 					<a href="#" class="tbl_menu">Pranala balik</a>
 				</li>
@@ -169,7 +172,7 @@
 			</ul>
 			<ul class="tbl_menu">
 				<li class="jdl_menu">Bahasa lain</li>
-				<img class="imagerow" src="images/row.png" alt="">
+				<img class="imagerow" src="<?= base_url('assets/img/row.png') ?>" alt="">
 				<li>
 					<a href="#" class="tbl_menu">Acèh</a>
 				</li>
@@ -338,7 +341,7 @@
 				<!--nav-expand-->
 				<ul class="navbar-nav ml-auto">
 					<li class="navbar-top">
-						<img class="imageuser" src="images/user.png" alt="">
+						<img class="imageuser" src="<?= base_url('assets/img/user.png') ?>" alt="">
 						<a class="menu_log" href="#">Belum masuk log</a>
 					</li>
 					<li class="navbar-top">
@@ -350,11 +353,11 @@
 					</li>
 
 					<li class="navbar-top">
-						<a class="menu_top_nav" href="#">Buat akun baru</a>
+						<a class="menu_top_nav" href="<?php echo site_url('Wikipedia/register'); ?>">Buat akun baru</a>
 					</li>
 
 					<li class="navbar-top">
-						<a class="menu_login_log" href="#">Masuk log</a>
+						<a class="menu_login_log" href="<?php echo site_url('Wikipedia/login'); ?>">Masuk log</a>
 					</li>
 				</ul>
 			</nav>
@@ -383,9 +386,9 @@
 						</li>
 						<li class="navbar-top">
 							<div class="txt_search">
-								<input type="search" id="search" placeholder="Cari Wikipedia">
+								<input class="doSearch" type="search" id="search" placeholder="Cari Wikipedia">
 								<button class="btn_search">
-									<img src="images/search.png" alt="" class="imagesearch">
+									<img src="<?= base_url('assets/img/search.png') ?>" alt="" class="imagesearch">
 								</button>
 							</div>
 						</li>
@@ -400,7 +403,7 @@
 					<!--tbl_welcome-->
 					<tr>
 						<th rowspan="3">
-							<img src="images/simbol.png" alt="" class="imagesimbol">
+							<img src="<?= base_url('assets/img/simbol.png') ?>" alt="" class="imagesimbol">
 						</th>
 						<td class="txt_welcome">Selamat datang di
 							<span class="txt_wiki_tbl">Wikipedia</span>,</td>
@@ -427,16 +430,16 @@
 			<div class="divsatu">
 				<!--divsatu-->
 
-				<img src="images/gradientbiru.png" alt="" class="gradient">
+				<img src="<?= base_url('assets/img/gradientbiru.png') ?>" alt="" class="gradient">
 				<h2 class="jdl_icon">
-					<img src="images/star.png" alt="" class="imagebintang">Artikel pilihan
+					<img src="<?= base_url('assets/img/star.png') ?>" alt="" class="imagebintang">Artikel pilihan
 				</h2>
 
 
 				<table>
 					<tr>
 						<th>
-							<img src="images/regulasi.png" alt="" class="imageregulasi">
+							<img src="<?= base_url('assets/img/regulasi.png') ?>" alt="" class="imageregulasi">
 						</th>
 						<td class="txt_regulasi">
 							<span class="txt_umum">Regulasi Umum Perlindungan Data</span> adalah regulasi dalam
@@ -469,10 +472,10 @@
 					</tr>
 				</table>
 				<br>
-				
-				<img src="images/gradientbiru.png" alt="" class="gradient1">
+
+				<img src="<?= base_url('assets/img/gradientbiru.png') ?>" alt="" class="gradient1">
 				<h2 class="jdl_icon">
-					<img src="images/peristiwa.png" alt="" class="imagestar"> Peristiwa terkini</h2>
+					<img src="<?= base_url('assets/img/peristiwa.png') ?>" alt="" class="imagestar"> Peristiwa terkini</h2>
 				<table>
 					<td class="txt_peristiwa">
 						<ul>
@@ -498,15 +501,15 @@
 
 					</td>
 					<td>
-						<img src="images/banjir.jpeg" alt="" class="imagebanjir">
+						<img src="<?= base_url('assets/img/banjir.jpeg') ?>" alt="" class="imagebanjir">
 						<p class="txt_down_image">Banjir di Provinsi Golestan, Iran</p>
 					</td>
 				</table>
 				<span class="txt_khususperistiwa">Peristiwa terkini lainnya...</span>
-				
-				<img src="images/gradientbiru.png" alt="" class="gradient3">
+
+				<img src="<?= base_url('assets/img/gradientbiru.png') ?>" alt="" class="gradient3">
 				<h2 class="jdl_icon">
-					<img src="images/calendar.png" alt="" class="imagestar"> Hari ini dalam sejarah</h2>
+					<img src="<?= base_url('assets/img/calendar.png') ?>" alt="" class="imagestar"> Hari ini dalam sejarah</h2>
 				<p class="textsejarah">
 					<span class="txt_umum">9 April: Hari Vimy Ridge</span> di Kanada;
 					<span class="txt_artikel_banjir">Hari Persatuan Nasional</span> di Georgia
@@ -548,7 +551,7 @@
 
 					</td>
 					<td>
-						<img src="images/juanda.jpg" alt="" class="imagejuanda">
+						<img src="<?= base_url('assets/img/juanda.jpg') ?>" alt="" class="imagejuanda">
 						<p class="img_djuanda">
 							<i>Djuanda</p>
 					</td>
@@ -561,10 +564,10 @@
 						<span class="txt_sama">Muat ulang</span>
 					</p>
 				</div>
-				
-				<img src="images/gradientbiru.png" alt="" class="gradient4">
+
+				<img src="<?= base_url('assets/img/gradientbiru.png') ?>" alt="" class="gradient4">
 				<h2 class="jdl_icon">
-					<img src="images/tanda.png" alt="" class="imagestar"> Tahukah anda</h2>
+					<img src="<?= base_url('assets/img/tanda.png') ?>" alt="" class="imagestar"> Tahukah anda</h2>
 				<table>
 					<td class="txt_peristiwa">
 						<ul>
@@ -594,17 +597,17 @@
 
 					</td>
 					<td>
-						<img src="images/nautilus.jpg" alt="" class="img_nautilus">
+						<img src="<?= base_url('assets/img/nautilus.jpg') ?>" alt="" class="img_nautilus">
 						<p class="img_djuanda">
 							<i>Nautilus</p>
 					</td>
 				</table>
 				<span class="txt_arsip">Arsip · Memulai artikel baru</span>
-				
-				<img src="images/gradientbiru.png" alt="" class="gradient5">
+
+				<img src="<?= base_url('assets/img/gradientbiru.png') ?>" alt="" class="gradient5">
 				<h2 class="jdl_icon">
-					<img src="images/image.png" alt="" class="imagestar"> Gambar pilihan</h2>
-				<img src="images/memasak.jpg" alt="..." class="img-thumbnail">
+					<img src="<?= base_url('assets/img/image.png') ?>" alt="" class="imagestar"> Gambar pilihan</h2>
+				<img src="<?= base_url('assets/img/memasak.jpg') ?>" alt="..." class="img-thumbnail">
 				<p class="txt_anak">Seorang anak perempuan di Bantul, Yogyakarta, sedang memasak nasi dengan bantuan tungku</p>
 				<p class="txt_ukuran">(ukuran asli 4.972 × 3.306 piksel, 756 KB)</p>
 				<table>
@@ -625,9 +628,9 @@
 			</div>
 			<!--/divsatu-->
 			<div class="divdua">
-					<img src="images/birumuda.jpg" alt="" class="gradient6">
+					<img src="<?= base_url('assets/img/birumuda.jpg') ?>" alt="" class="gradient6">
 				<h2 class="jdl_icon">
-					<img src="images/iconwiki.png" alt="" class="imagestar"> Mari Bergabung!</h2>
+					<img src="<?= base_url('assets/img/iconwiki.png') ?>" alt="" class="imagestar"> Mari Bergabung!</h2>
 				<p class="bergabung">
 					<span class="txt_wiki">Wikipedia</span> adalah sebuah ensiklopedia multibahasa yang dapat disunting, disalin, dan disebarkan secara bebas.
 					Sebanyak
@@ -643,12 +646,12 @@
 					<span class="txt_down_image">Sudah bergabung ? Silahkan</span>
 					<span class="txtlog"> masuk log</span>
 				</p>
-				<img src="images/birumuda.jpg" alt="" class="gradient7">
+				<img src="<?= base_url('assets/img/birumuda.jpg') ?>" alt="" class="gradient7">
 				<h2 class="jdl_icon">
-					<img src="images/pensil.png" alt="" class="imagestar"> Tantangan kolaborasi</h2>
+					<img src="<?= base_url('assets/img/pensil.png') ?>" alt="" class="imagestar"> Tantangan kolaborasi</h2>
 
 				<h2 class="jdl_hati">
-					<img src="images/hati.png" alt="" class="imagehati" width="15px" height="15px"> Kolaborasi artikel baru</h2>
+					<img src="<?= base_url('assets/img/hati.png') ?>" alt="" class="imagehati" width="15px" height="15px"> Kolaborasi artikel baru</h2>
 				<p class="bergabung">Wikipedia membutuhkan artikel-artikel berikut! Mari bersama menerjemahkan artikel berikut pada:
 					<span class="txt_wiki">(April 2019)</span>.</p>
 				<table class="ultabel">
@@ -788,16 +791,16 @@
 						<span class="txt_umum">Arsip halaman yang telah dibuat</span>
 					</li>
 				</ul>
-				<img src="images/birumuda.jpg" alt="" class="gradient8">
+				<img src="<?= base_url('assets/img/birumuda.jpg') ?>" alt="" class="gradient8">
 				<h2 class="jdl_icon">
-					<img src="images/komunitas.png" alt="" class="imagestar"> Komunitas</h2>
+					<img src="<?= base_url('assets/img/komunitas.png') ?>" alt="" class="imagestar"> Komunitas</h2>
 
 				<h2 class="jdl_hati">
-					<img src="images/kopi.png" alt="" class="imagehati" width="20px" height="20px" border-radius="5px"> Jadwal kopi darat</h2>
+					<img src="<?= base_url('assets/img/kopi.png') ?>" alt="" class="imagehati" width="20px" height="20px" border-radius="5px"> Jadwal kopi darat</h2>
 				<p class="bergabung">Yang direncanakan</p>
 				<p class="kopi">belum ada kegiatan kopi darat</p>
 				<h2 class="jdl_hati">
-					<img src="images/bumi.png" alt="" class="imagehati" width="20px" height="20px" border-radius="5px"> Kontribusi terbanyak</h2>
+					<img src="<?= base_url('assets/img/bumi.png') ?>" alt="" class="imagehati" width="20px" height="20px" border-radius="5px"> Kontribusi terbanyak</h2>
 				<p class="bergabung">Lima pengguna dengan kontribusi terbanyak di Wikipedia bahasa Indonesia berdasarkan jumlah suntingan artikel per Januari
 					2019.
 					<span class="txt_bahasa"> (data lengkap)</span>
@@ -826,9 +829,9 @@
 						<span class="txt_sama">.(g)</span>
 					</li>
 				</ol>
-				<img src="images/birumuda.jpg" alt="" class="gradient8">
+				<img src="<?= base_url('assets/img/birumuda.jpg') ?>" alt="" class="gradient8">
 				<h2 class="jdl_icon">
-					<img src="images/wikiporject.png" alt="" class="imagestar"> Proyek wikipedia lain</h2>
+					<img src="<?= base_url('assets/img/wikiporject.png') ?>" alt="" class="imagestar"> Proyek wikipedia lain</h2>
 				<p class="bergabung">
 					<span class="textwiki">Wikipedia bahasa Indonesia </span>
 					disediakan secara gratis oleh
@@ -841,13 +844,13 @@
 				<table class="ultabel">
 					<tr>
 						<td rowspan="2">
-							<img src="images/wikicommons.png" alt="" class="imagestar">
+							<img src="<?= base_url('assets/img/wikicommons.png') ?>" alt="" class="imagestar">
 						</td>
 						<td>
 							<span class="txt_umum">Commons</span>
 						</td>
 						<td rowspan="2">
-							<img src="images/wiktionary.png" alt="" class="imagestar">
+							<img src="<?= base_url('assets/img/wiktionary.png') ?>" alt="" class="imagestar">
 						</td>
 						<td>
 							<span class="txt_umum">Wiktionary</span>
@@ -861,13 +864,13 @@
 					</tr>
 					<tr>
 						<td rowspan="2">
-							<img src="images/Wikisource.png" alt="" class="imagestar">
+							<img src="<?= base_url('assets/img/Wikisource.png') ?>" alt="" class="imagestar">
 						</td>
 						<td>
 							<span class="txt_umum">Wikisource</span>
 						</td>
 						<td rowspan="2">
-							<img src="images/wikinews.png" alt="" class="imagestar">
+							<img src="<?= base_url('assets/img/wikinews.png') ?>" alt="" class="imagestar">
 						</td>
 						<td>
 							<span class="txt_umum">Wikinews</span>
@@ -881,13 +884,13 @@
 					</tr>
 					<tr>
 						<td rowspan="2">
-							<img src="images/Wikibooks.png" alt="" class="imagestar">
+							<img src="<?= base_url('assets/img/Wikibooks.png') ?>" alt="" class="imagestar">
 						</td>
 						<td>
 							<span class="txt_umum">Wikibooks</span>
 						</td>
 						<td rowspan="2">
-							<img src="images/wikiquote.png" alt="" class="imagestar">
+							<img src="<?= base_url('assets/img/wikiquote.png') ?>" alt="" class="imagestar">
 						</td>
 						<td>
 							<span class="txt_umum">Wikiquote</span>
@@ -901,13 +904,13 @@
 					</tr>
 					<tr>
 						<td rowspan="2">
-							<img src="images/wikispecies.png" alt="" class="imagestar">
+							<img src="<?= base_url('assets/img/wikispecies.png') ?>" alt="" class="imagestar">
 						</td>
 						<td>
 							<span class="txt_umum">Wikispecies</span>
 						</td>
 						<td rowspan="2">
-							<img src="images/wikiversity.png" alt="" class="imagestar">
+							<img src="<?= base_url('assets/img/wikiversity.png') ?>" alt="" class="imagestar">
 						</td>
 						<td>
 							<span class="txt_umum">Wikiversity</span>
@@ -921,13 +924,13 @@
 					</tr>
 					<tr>
 						<td rowspan="2">
-							<img src="images/wikivoyage.png" alt="" class="imagestar">
+							<img src="<?= base_url('assets/img/wikivoyage.png') ?>" alt="" class="imagestar">
 						</td>
 						<td>
 							<span class="txt_umum">Wikivoyage</span>
 						</td>
 						<td rowspan="2">
-							<img src="images/wikidata.png" alt="" class="imagestar">
+							<img src="<?= base_url('assets/img/wikidata.png') ?>" alt="" class="imagestar">
 						</td>
 						<td>
 							<span class="txt_umum">Wikidata</span>
@@ -941,7 +944,7 @@
 					</tr>
 				</table>
 				<p class="imagebawah">
-					<img src="images/metawiki.png" alt="" class="imagesmeta">
+					<img src="<?= base_url('assets/img/metawiki.png') ?>" alt="" class="imagesmeta">
 					<span class="metawiki">Meta-Wiki</span>
 					<span class="proyek">-Koordinasi proyek Mikipedia</span>
 				</p>
@@ -955,7 +958,7 @@
 			</div>
 			<div class="batasbantuan">
 				<p class="bantuan">
-					<img src="images/messages.png" alt="" class="imagesmessages"> Butuh bantuan? Hubungi kami!
+					<img src="<?= base_url('assets/img/messages.png') ?>" alt="" class="imagesmessages"> Butuh bantuan? Hubungi kami!
 				</p>
 			</div>
 			<div class="footerkategori">
@@ -976,8 +979,8 @@
 					<span class="txt_bagian"> Tampilan seluler</span>
 
 
-					<img src="images/powered.png" alt="" class="project">
-					<img src="images/project.png" alt="" class="project">
+					<img src="<?= base_url('assets/img/powered.png') ?>" alt="" class="project">
+					<img src="<?= base_url('assets/img/project.png') ?>" alt="" class="project">
 
 				</p>
 			</div>

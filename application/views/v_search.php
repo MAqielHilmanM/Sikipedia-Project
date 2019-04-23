@@ -9,8 +9,13 @@
     <title>Halaman Utama</title>
 	<link rel="stylesheet" href="<?= base_url('assets/home_search/halaman.css') ?>">
 	<link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
-	<script src="<?= base_url('assets/css/jquery.min.js') ?>"></script>
-	<script src="<?= base_url('assets/css/bootstrap.min.js') ?>"></script></head>
+	<link rel="stylesheet" href="<?= base_url('assets/css/search.css') ?>">
+  <script src="<?= base_url('assets/js/jquery.min.js') ?>"></script>
+  <script src="<?= base_url('assets/js/popper.min.js') ?>"></script>
+  <script src="<?= base_url('assets/js/bootstrap.js') ?>"></script>
+  <script src="<?= base_url('assets/js/script.js') ?>"></script>
+
+</head>
 <!--/head-->
 
 <body>
@@ -18,10 +23,10 @@
     <div class="row">
         <!--row-->
         <div class="col-md-2 search" <!--col-md-2-->
-            <img class="imagewiki" src="images/wikipedia.png" alt="">
+            <img class="imagewiki" src="<?= base_url('assets/img/wikipedia.png') ?>" alt="">
             <ul class="tbl_menu">
                 <li>
-                    <a href="#" class="tbl_menu">Main page
+                    <a href="<?php echo site_url('wiki/index'); ?>" class="tbl_menu">Main page
                     </a>
                 </li>
                 <li>
@@ -49,7 +54,7 @@
 
             <ul class="tbl_menu">
                 <li class="jdl_menu">Interaction</li>
-                <img class="imagerow" src="images/row.png" alt="">
+                <img class="imagerow" src="<?= base_url('assets/img/row.png') ?>" alt="">
                 <li>
                     <a href="#" class="tbl_menu">Help</a>
                 </li>
@@ -73,7 +78,7 @@
 
             <ul class="tbl_menu">
                 <li class="jdl_menu">Tools</li>
-                <img class="imagerow" src="images/row.png" alt="">
+                <img class="imagerow" src="<?= base_url('assets/img/row.png') ?>" alt="">
                 <li>
                     <a href="#" class="tbl_menu">Upload file</a>
                 </li>
@@ -87,9 +92,9 @@
 
             <ul class="tbl_menu">
                 <li class="jdl_menu">Language
-                    <img src="images/pengaturan.png" alt="" class="imagepengaturan">
+                    <img src="<?= base_url('assets/img/pengaturan.png') ?>" alt="" class="imagepengaturan">
                 </li>
-                <img class="imagerow" src="images/row.png" alt="">
+                <img class="imagerow" src="<?= base_url('assets/img/row.png') ?>" alt="">
             </ul>
 
 
@@ -103,7 +108,7 @@
                 <!--nav-expand-->
                 <ul class="navbar-nav ml-auto">
                     <li class="navbar-top">
-                        <img class="imageuser" src="images/user.png" alt="">
+                        <img class="imageuser" src="<?= base_url('assets/img/user.png') ?>" alt="">
                         <a class="menu_log" href="#">Belum masuk log</a>
                     </li>
                     <li class="navbar-top">
@@ -115,11 +120,11 @@
                     </li>
 
                     <li class="navbar-top">
-                        <a class="menu_top_nav" href="#">Buat akun baru</a>
+                        <a class="menu_top_nav" href="<?php echo site_url('Wikipedia/register'); ?>">Buat akun baru</a>
                     </li>
 
                     <li class="navbar-top">
-                        <a class="menu_login_log" href="#">Masuk log</a>
+                        <a class="menu_login_log" href="<?php echo site_url('Wikipedia/login'); ?>">Masuk log</a>
                     </li>
                 </ul>
             </nav>
@@ -148,9 +153,9 @@
                         </li>
                         <li class="navbar-top">
                             <div class="txt_search">
-                                <input type="search" id="search" placeholder="Cari Wikipedia">
+                                <input class="doSearch" type="search" id="search" placeholder="Cari Wikipedia">
                                 <button class="btn_search">
-                                    <img src="images/search.png" alt="" class="imagesearch">
+                                    <img src="<?= base_url('assets/img/search.png') ?>" alt="" class="imagesearch">
                                 </button>
                             </div>
                         </li>
@@ -161,25 +166,28 @@
             <!--/nav-expand-->
             <p class="txt_lamansearch">Search</p>
             <hr class="garislurus">
-            <input type="text" class="text_lamansearch">
-            <button class="btn_lamansearch">
-                <span class="txt_bergabung">Search</span>
-            </button>
+            <form class="mb-0" action="<?= base_url('index.php/Action/doSearch'); ?>" method="post">
+              <input type="text"  name="search" class="text_lamansearch" value="<?= $id ?>">
+              <button class="btn_lamansearch" type="submit">
+                  <span class="txt_bergabung">Search</span>
+              </button>
+            </form>
+
             <br>
             <button class="advanced">
                 <span class="txt_advanced">Advanced parameters:</span>
-                <img src="images/garisbawah.png" alt="" class="imagetandapanah">
+                <img src="<?= base_url('assets/img/garisbawah.png') ?>" alt="" class="imagetandapanah">
             </button>
-            <div class="form_advanced">
+            <div class="form_advanced d-none">
                 <p class="lurus_advanced">
-                    <img src="images/garislurus.jpg" alt="" class="garis_advanced">Search in page text
-                    <img src="images/garislurus.jpg" alt="" class="garis_lurus">
+                    <img src="<?= base_url('assets/img/garislurus.jpg') ?>" alt="" class="garis_advanced">Search in page text
+                    <img src="<?= base_url('assets/img/garislurus.jpg') ?>" alt="" class="garis_lurus">
                 </p>
                 <table class="tbl_advanced">
                     <tr>
                         <td>These words</td>
                         <td>
-                            <img src="images/peringatan.jpg" alt="" class="peringatan">
+                            <img src="<?= base_url('assets/img/peringatan.jpg') ?>" alt="" class="peringatan">
                         </td>
                         <td>
                             <input type="text" class="text_lamanadvanced">
@@ -188,7 +196,7 @@
                     <tr>
                         <td class="txt_these">Exactly this text</td>
                         <td>
-                            <img src="images/peringatan.jpg" alt="" class="peringatan">
+                            <img src="<?= base_url('assets/img/peringatan.jpg') ?>" alt="" class="peringatan">
                         </td>
                         <td>
                             <input type="text" class="text_lamanadvanced">
@@ -197,7 +205,7 @@
                     <tr>
                         <td class="txt_these">Not these words</td>
                         <td>
-                            <img src="images/peringatan.jpg" alt="" class="peringatan">
+                            <img src="<?= base_url('assets/img/peringatan.jpg') ?>" alt="" class="peringatan">
                         </td>
                         <td>
                             <input type="text" class="text_lamanadvanced">
@@ -209,7 +217,7 @@
 
                         </td>
                         <td>
-                            <img src="images/peringatan.jpg" alt="" class="peringatan">
+                            <img src="<?= base_url('assets/img/peringatan.jpg') ?>" alt="" class="peringatan">
                         </td>
                         <td>
                             <input type="text" class="text_lamanadvanced">
@@ -218,14 +226,14 @@
 
                 </table>
                 <p class="lurus_advanced">
-                    <img src="images/garislurus.jpg" alt="" class="garis_advanced">Structure
-                    <img src="images/garislurus.jpg" alt="" class="garis_lurus">
+                    <img src="<?= base_url('assets/img/garislurus.jpg') ?>" alt="" class="garis_advanced">Structure
+                    <img src="<?= base_url('assets/img/garislurus.jpg') ?>" alt="" class="garis_lurus">
                 </p>
                 <table class="tbl_structure">
                     <tr>
                         <td>Page title contains</td>
                         <td>
-                            <img src="images/peringatan.jpg" alt="" class="peringatan">
+                            <img src="<?= base_url('assets/img/peringatan.jpg') ?>" alt="" class="peringatan">
                         </td>
                         <td>
                             <input type="text" class="text_lamanstructure">
@@ -234,7 +242,7 @@
                     <tr>
                         <td class="txt_these">Subpages of this page</td>
                         <td>
-                            <img src="images/peringatan.jpg" alt="" class="peringatan">
+                            <img src="<?= base_url('assets/img/peringatan.jpg') ?>" alt="" class="peringatan">
                         </td>
                         <td>
                             <input type="text" class="text_lamanstructure">
@@ -243,7 +251,7 @@
                     <tr>
                         <td class="txt_these">Pages in these categories</td>
                         <td>
-                            <img src="images/peringatan.jpg" alt="" class="peringatan">
+                            <img src="<?= base_url('assets/img/peringatan.jpg') ?>" alt="" class="peringatan">
                         </td>
                         <td>
                             <input type="text" class="text_lamanstructure">
@@ -256,7 +264,7 @@
 
                         </td>
                         <td>
-                            <img src="images/peringatan.jpg" alt="" class="peringatan">
+                            <img src="<?= base_url('assets/img/peringatan.jpg') ?>" alt="" class="peringatan">
                         </td>
                         <td>
                             <input type="text" class="text_lamanstructure">
@@ -265,19 +273,19 @@
 
                 </table>
                 <p class="lurus_advanced">
-                    <img src="images/garislurus.jpg" alt="" class="garis_advanced">Files and images
+                    <img src="<?= base_url('assets/img/garislurus.jpg') ?>" alt="" class="garis_advanced">Files and images
 
-                    <img src="images/garislurus.jpg" alt="" class="garis_lurus">
+                    <img src="<?= base_url('assets/img/garislurus.jpg') ?>" alt="" class="garis_lurus">
                 </p>
                 <table class="tbl_files">
                     <tr>
                         <td>These words</td>
                         <td>
-                            <img src="images/peringatan.jpg" alt="" class="peringatan">
+                            <img src="<?= base_url('assets/img/peringatan.jpg') ?>" alt="" class="peringatan">
                         </td>
                         <td>
                             <button class="btn_select">Select file type
-                                <img src="images/garisbawah.png" alt="" class="imagetandaselect">
+                                <img src="<?= base_url('assets/img/garisbawah.png') ?>" alt="" class="imagetandaselect">
                             </button>
                         </td>
                     </tr>
@@ -285,9 +293,9 @@
             </div>
             <button class="advanced">
                 <span class="txt_advanced">Advanced parameters:</span>
-                <img src="images/garisbawah.png" alt="" class="imagetandapanah">
+                <img src="<?= base_url('assets/img/garisbawah.png') ?>" alt="" class="imagetandapanah">
             </button>
-            <div class="form_search">
+            <div class="form_search d-none">
                 <table class="tbl_search">
                     <tr>
                         <td class="txt_searchbox">
@@ -315,10 +323,24 @@
 
             <input type="text" class="text_addspace" placeholder="Add name space">
             <button class="btn_menu">
-                <img src="images/menu.png" alt="" class="imagemenu">
+                <img src="<?= base_url('assets/img/menu.png') ?>" alt="" class="imagemenu">
             </button>
             <div class="form_search1">
-                    <p class="txt_lamansearch">Hasil Search</p> 
+                    <p class="txt_lamansearch">Hasil Search</p>
+
+                    <div class="searchresults">
+                        <p class="mw-search-createlink">
+                            <i>The page "<a href="<?= base_url('index.php/wiki/'.$id) ?>" class="new" title="<?= $id ?> (page does not exist)"><?= $id ?></a>" does not exist. You can <a href="/wiki/Wikipedia:Articles_for_creation" title="Wikipedia:Articles for creation">ask for it to be created</a>, but consider checking the search result below to see whether the topic is already covered.</i></p>
+                        <ul class="mw-search-results">
+                          <?php foreach ($result as $res) { ?>
+                            <li class="mw-search-result">
+                                <div class="mw-search-result-heading"><a href="<?= base_url('index.php/wiki/'.$res->id) ?>" title="TAG (BBS)" data-serp-pos="0"><?= $res->id ?></a> </div>
+                                <div class="searchresult"><?php $preview = $res->article; if(strlen($preview) > 255) echo substr($preview,0,255); else echo $preview   ?></div>
+                                <div class="mw-search-result-data"><?= $res->create_date ?></div>
+                            </li>
+                          <?php } ?>
+                        </ul>
+                    </div>
 
             </div>
             <div class="batasfootersearch">
@@ -331,8 +353,8 @@
                     <span class="txt_bagian"> Tampilan seluler</span>
 
 
-                    <img src="images/powered.png" alt="" class="project">
-                    <img src="images/project.png" alt="" class="project">
+                    <img src="<?= base_url('assets/img/powered.png') ?>" alt="" class="project">
+                    <img src="<?= base_url('assets/img/project.png') ?>" alt="" class="project">
 
                 </p>
             </div>
